@@ -8,7 +8,7 @@ The applications of in-memory hashtable in real world applications are countless
 
 Having entire hashtable in one node is infeasible in many large-scale scenarios. Single node might not have enough memory required to store entire hashmap. Also, accessing hashmap stored on a single node can become a bottleneck from the performance perspective. Hence, arises the need to have a distributed in-memory hashmap, without compromising on the performance. 
 
-![Image](cuckoo_hashing.png =250x250)
+![Image](cuckoo_hashing.png | width=100)
 
 ### Challenges
 
