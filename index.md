@@ -4,11 +4,9 @@ We are going to implement a distributed, concurrent, in-memory  hash-table.  We 
 
 ### Background
 
-The applications of hash-table in real world applications are countless. Hash tables allow constant time lookups. 
+The applications of in-memory hashtable in real world applications are countless. In-memory hashtables allow constant time lookups. Cuckoo hashing is a efficient scheme for resolving hash collisions of values of hash functions in a table, with worst-case constant lookup time.
 
-Cuckoo hashing is a scheme in computer programming for resolving hash collisions of values of hash functions in a table, with worst-case constant lookup time. According to Wikipedia, the name derives from the behavior of some species of cuckoo, where the cuckoo chick pushes the other eggs or young out of the nest when it hatches; analogously, inserting a new key into a cuckoo hashing table may push an older key to a different location in the table.
-
-Having entire hashtable in one node is infeasible in many large-scale scenarios. The memory required to store entire hashmap might not be enough for one node. Also, accessing hashmap on a  single node can become a bottleneck from the performance perspective. Hence, arises the need to have a distributed in-memory hashmap, without compromising on the performance.  
+Having entire hashtable in one node is infeasible in many large-scale scenarios. Single node might not have enough memory required to store entire hashmap. Also, accessing hashmap stored on a single node can become a bottleneck from the performance perspective. Hence, arises the need to have a distributed in-memory hashmap, without compromising on the performance.  
 
 ### Challenges
 
@@ -22,14 +20,12 @@ We will be running and testing our code on Latedays cluster machine. We will sta
 
 - Plan to achieve 
 1. Sequential implementation of the Hashmap on a single node.
-2. Parallel implementation of in-memory hashmap using cuckoo hashing.
-3. Scaling this hashtable in distributed environment.
+2. Parallel implementation of in-memory hashmap using cuckoo hashing for a single node.
+3. Scaling this hashtable to multiple nodes in distributed setting.
 	
 - Hope to achieve 
-1. Dynamically remapping keys and generating in-memory hashtable to prevent a single node becoming a hotspot. Later, even this load balancer can be replicated to avoid a single bottleneck.
-2. On a single node, hashtable might grow exponentially to not fit in the memory of the system. We will try to optimise disk I/O with in-memory cuckoo hashing.
-3. Applying this disk I/O trick in distributed environment. 
-
+1. Dynamic Load Balancing: Dynamically remapping keys and generating in-memory hashtable to prevent a single node becoming a hotspot. Later, even this load balancer can be replicated to avoid becoming a hotspot itself.
+2. Confirgurability to run in single node mode: In ceratin situation it's benifical to run hashtable on a single node to avoid overhead associated setting. For that mode, we will try implement in-memory hashtable with disk IO support.
 
 ### Platform Choice
 
@@ -38,9 +34,9 @@ We will implement our project in C++ and will be using latedays for testing and 
 ### Schedule
 
 - 4/10 - 4/16: Do literature survey and implement sequential hashtable on a single node.
-- 4/17 - 4/24: Implement basic version in-memory hashmap using cuckoo hashing for a single node.
+- 4/17 - 4/24: Implement basic version of in-memory hashmap using cuckoo hashing for a single node.
 - 4/25 - 5/1: Complete and optimise in-memory hashmap using cuckoo hashing for a single node.
-- 5/2 - 5/8: Scaling this hashtable in distributed environment.
+- 5/2 - 5/8: Scale this hashtable in distributed environment.
 - 5/9 - 5/11: Final optimisation and report preparation.
 
 ### References
