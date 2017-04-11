@@ -1,6 +1,6 @@
 ### Summary
 
-We are going to implement a distributed, high performant, concurrent, in-memory  hash-table.  We will be testing the code on Intel Xeon Phi coprocessors (Latedays cluster).
+We are going to implement a distributed, concurrent, in-memory  hash-table.  We will be testing the code on Intel Xeon Phi coprocessors (Latedays cluster).
 
 ### Background
 
@@ -16,20 +16,19 @@ The primary challenge of this project is gaining a sufficient understanding of t
 
 ### Resources
 
-We will be running and testing our code on Latedays cluster machine. Our code base will start from the scratch but also rely on paper on MemC3 [1] for a single node. 
+We will be running and testing our code on Latedays cluster machine. We will start our codebase from the scratch and will be using some of the optimizations trick discussed in MemC3[1] for a single node case.
 
 ### Goals and Deliverables
 
-Plan to achieve 
-Sequential implementation of the Hashmap on a single node.
-Parallel implementation of in-memory hashmap using cuckoo hashing.
-Scaling this hashtable in distributed environment.
+- Plan to achieve 
+1. Sequential implementation of the Hashmap on a single node.
+2. Parallel implementation of in-memory hashmap using cuckoo hashing.
+3. Scaling this hashtable in distributed environment.
 	
-	
-Hope to achieve 
-Dynamically remapping keys and generating in-memory hashtable to prevent a single node becoming a hotspot. Later, even this load balancer can be replicated to avoid a single bottleneck.
-On a single node, hashtable might grow exponentially to not fit in the memory of the system. We will try to optimise disk I/O with in-memory cuckoo hashing.
-Applying this disk I/O trick in distributed environment. 
+- Hope to achieve 
+1. Dynamically remapping keys and generating in-memory hashtable to prevent a single node becoming a hotspot. Later, even this load balancer can be replicated to avoid a single bottleneck.
+2. On a single node, hashtable might grow exponentially to not fit in the memory of the system. We will try to optimise disk I/O with in-memory cuckoo hashing.
+3. Applying this disk I/O trick in distributed environment. 
 
 
 ### Platform Choice
