@@ -38,11 +38,11 @@ We will implement our project in C++ and will be using latedays for testing and 
 
 ### Schedule
 
-4/10 - 4/16: Do literature survey and implement sequential hashtable on a single node.
-4/17 - 4/24: Implement basic version in-memory hashmap using cuckoo hashing for a single node.
-4/25 - 5/1: Complete and optimise in-memory hashmap using cuckoo hashing for a single node.
-5/2 - 5/8: Scaling this hashtable in distributed environment.
-5/9 - 5/11: Final optimisation and report preparation.
+- 4/10 - 4/16: Do literature survey and implement sequential hashtable on a single node.
+- 4/17 - 4/24: Implement basic version in-memory hashmap using cuckoo hashing for a single node.
+- 4/25 - 5/1: Complete and optimise in-memory hashmap using cuckoo hashing for a single node.
+- 5/2 - 5/8: Scaling this hashtable in distributed environment.
+- 5/9 - 5/11: Final optimisation and report preparation.
 
 ### References
 
