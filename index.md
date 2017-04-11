@@ -6,7 +6,9 @@ We are going to implement a distributed, concurrent, in-memory  hash-table.  We 
 
 The applications of in-memory hashtable in real world applications are countless. In-memory hashtables allow constant time lookups. Cuckoo hashing is a efficient scheme for resolving hash collisions of values of hash functions in a table, with worst-case constant lookup time.
 
-Having entire hashtable in one node is infeasible in many large-scale scenarios. Single node might not have enough memory required to store entire hashmap. Also, accessing hashmap stored on a single node can become a bottleneck from the performance perspective. Hence, arises the need to have a distributed in-memory hashmap, without compromising on the performance.  
+Having entire hashtable in one node is infeasible in many large-scale scenarios. Single node might not have enough memory required to store entire hashmap. Also, accessing hashmap stored on a single node can become a bottleneck from the performance perspective. Hence, arises the need to have a distributed in-memory hashmap, without compromising on the performance. 
+
+![Image](images/cuckoo_hashing.)
 
 ### Challenges
 
