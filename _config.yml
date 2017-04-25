@@ -1,7 +1,6 @@
 title: ScaleCuckoo
 description: A Distributed Concurrent In-memory Hashtable
 theme: jekyll-theme-cayman
-
-layout: page
-header: Posts By Category
-group: navigation
+navigation:
+  - title: checkpoint
+    url: /checkpoint/
